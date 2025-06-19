@@ -1,5 +1,7 @@
 package com.project.two.foodDeliveryWebsite.service;
 
+import com.project.two.foodDeliveryWebsite.io.FoodRequest;
+import com.project.two.foodDeliveryWebsite.io.FoodResponse;
 import org.springframework.web.multipart.MultipartFile;
 
 public interface FoodService {
@@ -11,5 +13,7 @@ public interface FoodService {
     //Upload the file (maybe to a local server or cloud like AWS S3)
     //Get back a URL or confirmation string
     //Store that info in the database, or return it to the client
-    String uploadFile(MultipartFile file);
+    String uploadFile(MultipartFile file); // upload file will return an image url
+
+    FoodResponse addFood(FoodRequest request, MultipartFile file);
 }
